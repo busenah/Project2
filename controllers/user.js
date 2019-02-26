@@ -2,10 +2,10 @@ const passport = require("passport");
 const { User } = require("../models/index");
 
 module.exports = {
+  //   setting up signup for new users
   getSignup: function(req, res) {
     res.render("user/signup", { error: req.flash("error") });
   },
-  //   setting up signup for new users
   postSignup: function(req, res) {
     const { username, password } = req.body;
     User.register(new User({ username }), password)
