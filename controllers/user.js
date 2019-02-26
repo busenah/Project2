@@ -32,25 +32,27 @@ module.exports = {
       user,
       info
     ) {
-        if (err || !user) {
-            req.flash("error", info.message);
-            res.redirect("/login");
+      if (err || !user) {
+        req.flash("error", info.message);
+        res.redirect("/login");
+      }
+
+      req.logIn(user, function(err) {
+        if (err) {
+          req.flash("error", err.message);
+          return res.redirect("/login");
         }
 
-        req.logIn(user, function(err) {
-            if (err) {
-                req.flash("error", err.message);
-                return res.redirect("/login")
-            }
-            
-            req.flash("Your login has been successful", "You are logged in")
-            return res.redirect("/")
-        })
-    })
+        req.flash("Your login has been successful", "You are logged in");
+        return res.redirect("/");
+      });
+    });
 
-    authenticate
+    authenticate(req, res, next);
+  },
 
-
-
-      
-        
+  getlogout: function(req, res) {
+    req.logout();
+    res.redirect("/");
+  }
+};
