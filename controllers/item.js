@@ -1,4 +1,4 @@
-const { Item } = require("../models / index");
+const { Item } = require("../models/index");
 
 module.exports = {
   new: function(req, res) {
@@ -25,33 +25,4 @@ module.exports = {
       res.render("item/edit", { item });
     });
   },
-  update: function(req, res) {
-    console.log(req.body);
-    const { name, description, status, priority } = req.body;
-
-    Item.findOneAndUpdate(
-      req.params.id,
-      {
-        name,
-        description,
-        status,
-        priority
-      },
-      {
-        runValidators: true
-      }
-    )
-      .then(item => {
-        res.redirect(`/item/${item._id}`);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  },
-  delete: function(req, res) {
-    Item.remove({ _id: req.params.id }).then(item => {
-      console.log(item);
-      res.redirect("/");
-    });
-  }
-};
+  
