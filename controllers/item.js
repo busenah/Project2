@@ -6,15 +6,14 @@ module.exports = {
   },
   //   allows users to create new photos
   create: function(req, res) {
-    const { name, description, priority, status } = req.body;
-    Item.create({
-      name,
-      description,
-      priority,
-      status
-    }).then(item => {
-      res.redirect(`/item/${item._id}`);
-    });
+    postMessage
+      .create({
+        title: req.body.title,
+        content: req.body.content
+      })
+      .then(item => {
+        res.redirect(`/item/${item._id}`);
+      });
   },
 
   //   allows users to show photos
