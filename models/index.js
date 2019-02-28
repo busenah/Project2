@@ -4,7 +4,7 @@ const Post = new mongoose.Schema({
   content: String
 });
 
-
 module.exports = {
   Post: mongoose.model("Post", require("./post")),
   User: mongoose.model("User", require("./user"))
+};
