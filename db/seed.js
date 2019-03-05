@@ -1,5 +1,5 @@
 postMessage.create({
-  name: "Post photos",
+  name: "Post Comment",
   description: " ",
-  status: "You have completed posting your photos"
+  status: "You have completed posting your comment"
 });
