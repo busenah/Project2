@@ -35,7 +35,6 @@ module.exports = {
   //   allows users to update their photo inventories
 
   update: function(req, res) {
-    console.log(req.body);
     const { name, description, status, priority } = req.body;
 
     Item.findOneAndUpdate(
@@ -53,16 +52,13 @@ module.exports = {
       .then(item => {
         res.redirect(`/item/${item._id}`);
       })
-      .catch(err => {
-        console.log(err);
-      });
+      .catch(err => {});
   },
 
   //   allows users to delete their photos
 
   delete: function(req, res) {
     Item.remove({ _id: req.params.id }).then(item => {
-      console.log(item);
       res.redirect("/");
     });
   }
