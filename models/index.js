@@ -5,6 +5,6 @@ const Post = new mongoose.Schema({
 });
 
 module.exports = {
-  Post: mongoose.model("Post", require("./post")),
+  Post: mongoose.model("Post", require("./item")),
   User: mongoose.model("User", require("./user"))
 };

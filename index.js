@@ -12,6 +12,8 @@ app.set("view engine", "hbs");
 
 app.use(require("./routes/index"));
 
-app.listen("3000", (req, res) => {
-  console.log("Listening on port 3000");
+app.set("port", process.env.PORT || 3001);
+
+app.listen(app.get("port"), () => {
+  console.log(`✅ PORT: ${app.get("port")} 🌟`);
 });
