@@ -1,19 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const { Post } = require("../models/index");
-const postController = require("../controllers/item");
+const authenticatedUser = require("../utils/authenticatedUser");
 
 router.get("/", (req, res) => {
-  console.log(Post);
-  Post.find({}).then(items => {
+  Post.find({}).then(posts => {
     res.render("index", {
-      items
+      posts,
+      success: req.flash("success")
     });
   });
 });
 
-router.get("/new", postController.new);
-router.post("/", postController.create);
+router.use(require("./new"));
+router.use("/post", authenticaedUser, require("./item.js"));
 
 module.exports = router;
 

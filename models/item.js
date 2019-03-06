@@ -6,7 +6,7 @@ const ItemSchema = new Schema({
   description: String,
   status: {
     type: String,
-    enum: ["Posted Photos Successfully", "Not Posted Photos Successfully"]
+    enum: ["Posted Successfully", "Not Posted Successfully"]
   },
   priority: {
     type: Number,
