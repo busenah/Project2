@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require("../db/connection");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
@@ -7,4 +7,4 @@ const UserSchema = new Schema({
   email: String
 });
 
-module.exports = UserSchema;
+module.exports = mongoose.model("user", UserSchema);

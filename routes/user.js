@@ -6,13 +6,12 @@ const userController = require("../controllers/user");
 router.get("/signup", userController.getSignup);
 router.post("/signup", userController.postSignup);
 
-// allows for log in
-router.get("/login", userController.getLogin);
-router.post("/login", userController.postLogin);
+// router.get("/login", userController.getLogin);
+// router.post("/login", userController.postLogin);
 
-// allows for log out
-router.get("/logout", userController.getLogout);
-
+// // allows for log out
+// router.get("/logout", userController.getLogout);
+// router.post("/")
 module.exports = router;
 
 // {{!-- followed tips from WDI-28-To-Do Example --}}

@@ -1,23 +1,5 @@
-<h2 class="mb-3">Your Post</h2>
+<h2>Welcome to Post</h2>
 
-{{#if success}}
-<p class="alert alert-success">{{success}}</p>
-{{/if}}
 
-{{#if items}}
-<div class="card-deck">
-    {{#each items }}
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">{{name}}</h5>
-            <p class="card-text">{{description}}</p>
-        </div>
-        <div class="card-footer">
-            <a href="/item/{{id}}" class="card-link">View More</a>
-        </div>
-    </div>
-    {{/each}}
-</div>
-{{/if}}
 
 {{!-- followed tips from WDI-28-To-Do Example --}}
