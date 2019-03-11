@@ -4,22 +4,23 @@ const mongoose = require("../models/user");
 const User = mongoose.model("user");
 
 router.get("/", (req, res) => {
-  res.render("user/index");
+  res.render("user/userform");
 });
 
-router.post("/user/", (req, res) => {
+router.get("/user", (req, res) => {
+  res.render("user/userform");
+});
+
+router.post("/user", (req, res) => {
   User.create({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email
   }).then(newUser => {
-    res.render("index");
+    res.render("user/post");
   });
 });
 
-router.get("/user/", (req, res) => {
-  res.render("user/userform");
-});
 // // const authenticatedUser = require("../utils/authenticatedUser");
 
 // router.get("/", (req, res) => {
