@@ -21,6 +21,11 @@ router.post("/user", (req, res) => {
   });
 });
 
+app.set("port", process.env.PORT || 3001);
+
+app.listen(app.get("port"), () => {
+  console.log(`✅ PORT: ${app.get("port")} 🌟`);
+});
 // // const authenticatedUser = require("../utils/authenticatedUser");
 
 // router.get("/", (req, res) => {
